@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
     {'title': 'Taman C', 'latlng': LatLng(-1.616497, 103.5648949)},
     {'title': 'Kolam Renang', 'latlng': LatLng(-1.6480879, 103.5996136)},
   ];
-  var data;
 
   // inisial data logic
   bool isClickMarker = false;
@@ -341,8 +340,8 @@ class _MyHomePageState extends State<MyHomePage> {
       endLng: endLng,
     );
 
-    try {
-      data = await network.getData();
+    try {    
+      var data = await network.getData();
       LineString ls =
           LineString(data['features'][0]['geometry']['coordinates']);
 
